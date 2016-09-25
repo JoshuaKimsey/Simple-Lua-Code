@@ -1,3 +1,4 @@
+function loopWords()
 function printText(userInputText)
 	print(userInputText)
 end
@@ -24,12 +25,14 @@ function repeatWord()
 	loopText(userInputText,userInputNumber)
 	salutations(userInputText,userInputNumber)
 end
+repeatWord()
+end
 
 calculateNumber(calculation1, calculation2, mathType)
 	total = 0
 	remainder = 0
-	num1 = calculation1
-	num2 = calculation2
+	local num1 = calculation1
+	local num2 = calculation2
 	if mathType == "+" then
 		total = num1 + num2
 	elseif mathType == "-" then
@@ -49,7 +52,6 @@ calculateNumber(calculation1, calculation2, mathType)
 	else
 		print(string.format("The total of your caltulations is: $d", total))
 	end
-end
 	
 
 function calculate()
@@ -66,5 +68,5 @@ function calculate()
 	calculateNumber(calculation1, calculation2, userMathInput)
 end
 
-repeatWord()
-calculate()
+loopWords()
+
