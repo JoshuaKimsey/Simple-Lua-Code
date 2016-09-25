@@ -14,6 +14,7 @@ Will be added to and updated over time!
 This program requires the Lua Programming Language to successfully run! 
 
 You can download the Lua Programming Language here: https://www.lua.org 
+
 Navigate to Downloads and install the stable release
 
 Windows and Mac users will need to install the language in order for this program to work.
