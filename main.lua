@@ -28,49 +28,46 @@ function loopWords()
 	repeatWord()
 end
 
-function calculateNumber(calculation1, calculation2, userMathInput)
-	total = 0
-	remainder = 0
-	local add = "+"
-	local subtract = "-"
-	local multiply = "*"
-	local divide = "/"
-	if userMathInput == add then
-		total = total + (calculation1 + calculation2)
-	elseif userMathInput == subtract then
-		total = calculation1 - calculation2
-	elseif userMathInput == multiply then
-		total = calculation1 * calculation2
-	elseif userMathInput == divide then
-		total =  calculation1 / calculation2
-		remainder = calculation1 % calculation2
-	else
-		total = "error!"
-	end
+function calculate()
+	function calculateNumber(calculation1, calculation2, userMathInput)
+		total = 0
+		remainder = 0
+		local add = "+"
+		local subtract = "-"
+		local multiply = "*"
+		local divide = "/"
+		if userMathInput == add then
+			total = total + (calculation1 + calculation2)
+		elseif userMathInput == subtract then
+			total = calculation1 - calculation2
+		elseif userMathInput == multiply then
+			total = calculation1 * calculation2
+		elseif userMathInput == divide then
+			total =  calculation1 / calculation2
+			remainder = calculation1 % calculation2
+		else
+			total = "error!"
+		end
 
-	if userMathInput == divide then
 		io.write("The total of your caltulations is: ")
 		print(total)
-		io.write("Your remainder is: ")
-		print(remainder)
-	else
-		io.write("The total of your calculation is: ")
-		print(total)
+		
 	end
-end
 
-function calculate()
-	print("Please enter the numbers you would like to calculate!\n")
-	io.write("First Number: ")
-	calculation1 = io.read()
-	calculation1 = tonumber(calculation1)
-	io.write("\n\nSecond Number: ")
-	calculation2 = io.read()
-	calculation2 = tonumber(calculation2)
-	print("\n")
-	print("Please enter what kind of mathmatical operation you would like to do on the two numbers [+, -, *, /]")
-	userMathInput = io.read()
-	calculateNumber(calculation1, calculation2, userMathInput)
+	function calculateMain()
+		print("Please enter the numbers you would like to calculate!\n")
+		io.write("First Number: ")
+		calculation1 = io.read()
+		calculation1 = tonumber(calculation1)
+		io.write("\n\nSecond Number: ")
+		calculation2 = io.read()
+		calculation2 = tonumber(calculation2)
+		print("\n")
+		print("Please enter what kind of mathmatical operation you would like to do on the two numbers [+, -, *, /]")
+		userMathInput = io.read()
+		calculateNumber(calculation1, calculation2, userMathInput)
+	end
+	calculateMain()
 end
 
 loopWords()
