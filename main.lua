@@ -51,7 +51,7 @@ function calculate()
 
 		io.write("The total of your caltulations is: ")
 		print(total)
-		
+
 	end
 
 	function calculateMain()
@@ -70,5 +70,23 @@ function calculate()
 	calculateMain()
 end
 
-loopWords()
-calculate()
+while (userChoice ~= 3) do
+	print("\nWhat function would you like to run?\n")
+	print("[1] Repeat Entered Text")
+	print("[2] Calculate Two Numbers Using A Mathematical Operation")
+	print("[3] Exit The Program")
+	io.write("Please Select A Number: ")
+	userChoice = io.read()
+	userChoice = tonumber(userChoice)
+
+	if userChoice == 1 then
+		print("\n")
+		loopWords()
+	elseif userChoice == 2 then
+		print("\n")
+		calculate()
+	elseif userChoice == 3 then
+		print("\nGood-Bye!")
+		break
+	end
+end
