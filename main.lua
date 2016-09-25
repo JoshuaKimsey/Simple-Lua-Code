@@ -28,29 +28,34 @@ function loopWords()
 	repeatWord()
 end
 
-function calculateNumber(calculation1, calculation2, mathType)
+function calculateNumber(calculation1, calculation2, userMathInput)
 	total = 0
 	remainder = 0
-	local num1 = calculation1
-	local num2 = calculation2
-	if mathType == "+" then
-		total = num1 + num2
-	elseif mathType == "-" then
-		total = num1 - num2
-	elseif mathType == "*" then
-		total = num1 * num2
-	elseif mathType == "/" then
-		total =  num1 / num2
-		remainder = num1 % num2
+	local add = "+"
+	local subtract = "-"
+	local multiply = "*"
+	local divide = "/"
+	if userMathInput == add then
+		total = total + (calculation1 + calculation2)
+	elseif userMathInput == subtract then
+		total = calculation1 - calculation2
+	elseif userMathInput == multiply then
+		total = calculation1 * calculation2
+	elseif userMathInput == divide then
+		total =  calculation1 / calculation2
+		remainder = calculation1 % calculation2
 	else
 		total = "error!"
 	end
 
-	if mathType == "/" then
-		print(string.format("The total of your caltulations is: $d", total))
-		print(string.format("Your remainder is: $d", remainder))
+	if userMathInput == divide then
+		io.write("The total of your caltulations is: ")
+		print(total)
+		io.write("Your remainder is: ")
+		print(remainder)
 	else
-		print(string.format("The total of your caltulations is: $d", total))
+		io.write("The total of your calculation is: ")
+		print(total)
 	end
 end
 
