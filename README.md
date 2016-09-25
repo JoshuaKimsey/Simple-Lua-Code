@@ -5,4 +5,6 @@ Has two abilities at the moment:
 Repeat something the user types in a certain number of times
 Calculate the total of two entered numbers with a mathematical operation
 
+These Can Be Accessed Through A Menu For The User To Choose Which Function They Want To Run
+
 Will be added to and updated over time!
