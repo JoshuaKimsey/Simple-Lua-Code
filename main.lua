@@ -11,7 +11,7 @@ function loopWords()
 		end
 	end
 
-	function salutations(userInputText,userInputNumber)
+	function salutations(userInputText, userInputNumber)
 		print(string.format("\n\"%s\" has been printed %d times!\nThank you! \nGood-bye!", userInputText, userInputNumber))
 	end
 
